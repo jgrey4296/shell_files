@@ -1,0 +1,3 @@
+source ~/github/jg_shell_files/exports.bash
+source ~/github/jg_shell_files/languageSpecific.bash
+source ~/github/jg_shell_files/aliases.bash

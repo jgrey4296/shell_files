@@ -9,11 +9,14 @@ alias antjs='antlr4 -Dlanguage=JavaScript'
 #------------------------------------------------------------
 
 #Python:
+export JG_PYLIBS=~/github/.installed_pylibs
 
 function setPy36(){
     export PYTHONPATH=/usr/local/lib/python3.6/site-packages #main site packages location
     export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
     export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
+    export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH
+    export PYTHONPATH=./:$PYTHONPATH
     source activate py36
 }
 
@@ -21,6 +24,8 @@ function setPy3(){
     export PYTHONPATH=/usr/local/lib/python3.5/site-packages #main site packages location
     export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
     export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
+    export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH
+    export PYTHONPATH=./:$PYTHONPATH
     #source activate root --not used because it slows default startup
 }
 
@@ -33,6 +38,8 @@ function setPy2(){
     export PYTHONPATH=/usr/local/lib/python2.7/site/packages
     export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
     export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
+    export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH
+    export PYTHONPATH=./:$PYTHONPATH
     source activate py2
 }
 
@@ -44,7 +51,8 @@ setPy3
 
 
 #JavaScript:
-alias test="node --harmony --harmony_destructuring /usr/local/bin/nodeunit"
+#removed --harmony_destructuring
+alias test="node --harmony /usr/local/bin/nodeunit"
 alias jsrepl="env NODE_NO_READLINE=1 node"
 
 #TEX:
@@ -71,3 +79,10 @@ export EDITOR=emacs
 
 #TWINE:
 alias twine="open ~/dropbox/Programs/Twine\ 2.0/index.html"
+
+#JACAMO
+export JACAMO_HOME=/Users/jgrey/github/otherLibs/jacamo/build
+export PATH=$JACAMO_HOME/scripts:$PATH
+export JDK_HOME="$(/usr/libexec/java_home)"
+export JAVA_HOME="$(/usr/libexec/java_home)"
+

@@ -37,7 +37,8 @@ alias jgf="find . -maxdepth 1 -iname $1"
 alias macports="port"
 
 alias defaultNode="node"
-alias node="node --harmony --harmony_destructuring"
+#removed --harmony_destructuring
+alias node="node --harmony"
 
 function mycd(){
     builtin cd "$@" && ls
@@ -63,3 +64,13 @@ alias jgdu="du -hd 1 | sort"
 
 #Markdown alias:
 #alias markdown="markdown_py-2.7"
+
+#sclang for emacs:
+alias sclangel="sclang -d ~/github/.super_collider_classes/ -r -s -i emacs"
+
+#for automating the update of pip packages:
+alias pipupdate="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U"
+
+#Emacs aliases:
+alias temacs="emacs ~/github/writing/TODO.org"
+alias wemacs="emacs ~/github/writing/main.org"

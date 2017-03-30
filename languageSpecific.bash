@@ -52,7 +52,7 @@ setPy3
 
 #JavaScript:
 #removed --harmony_destructuring
-alias test="node --harmony /usr/local/bin/nodeunit"
+#alias test="node --harmony /usr/local/bin/nodeunit"
 alias jsrepl="env NODE_NO_READLINE=1 node"
 
 #TEX:

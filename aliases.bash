@@ -39,6 +39,7 @@ alias macports="port"
 alias defaultNode="node"
 #removed --harmony_destructuring
 alias node="node --harmony"
+alias bnode="babel-node"
 
 function mycd(){
     builtin cd "$@" && ls
@@ -74,3 +75,7 @@ alias pipupdate="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d =
 #Emacs aliases:
 alias temacs="emacs ~/github/writing/TODO.org"
 alias wemacs="emacs ~/github/writing/main.org"
+
+#haskell:
+alias whaskell="ghci -XFlexibleContexts -Wall -fwarn-name-shadowing "
+alias haskell="ghci -XFlexibleContexts -XGeneralizedNewtypeDeriving"

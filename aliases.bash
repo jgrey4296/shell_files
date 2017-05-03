@@ -1,3 +1,4 @@
+
 #------------------------------------------------------------
 #switch whereis with which
 alias whereis="which"
@@ -78,4 +79,5 @@ alias wemacs="emacs ~/github/writing/main.org"
 
 #haskell:
 alias whaskell="ghci -XFlexibleContexts -Wall -fwarn-name-shadowing "
-alias haskell="ghci -XFlexibleContexts -XGeneralizedNewtypeDeriving"
+alias haskell="ghci -XFlexibleContexts -XGeneralizedNewtypeDeriving -XScopedTypeVariables"
+

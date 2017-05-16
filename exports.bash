@@ -12,6 +12,9 @@ export PATH=/Users/jgrey/github/otherLibs/cppcheck:$PATH
 export PATH=/Applications/SuperCollider/SuperCollider.app/Contents/Resources:$PATH
 export PATH=/Applications/SuperCollider/SuperCollider.app/Contents/MacOS:$PATH
 
+#For Tidal:
+export TIDAL_TEMPO_PORT=57120
+
 #racket:
 export PATH=/Applications/Racket/bin:$PATH
 
@@ -27,6 +30,8 @@ export PATH=/Applications/blender/blender.app/Contents/MacOS:$PATH
 #For clingo:
 export PATH=~/clingo:$PATH
 
+#for haskell / cabal
+export PATH=$HOME/Library/Haskell/bin:$PATH
 
 #setting up the prompt:
 export PS1='(\j): \D{%D} \A \u:  '

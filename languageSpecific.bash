@@ -34,12 +34,16 @@ function resetPy3(){
     source activate root
     }
 
-function setPy2(){
+function setPy2_path(){
     export PYTHONPATH=/usr/local/lib/python2.7/site/packages
     export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
     export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
     export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH
     export PYTHONPATH=./:$PYTHONPATH
+}
+
+function setPy2(){
+    setPy2_path
     source activate py2
 }
 
@@ -82,7 +86,6 @@ alias twine="open ~/dropbox/Programs/Twine\ 2.0/index.html"
 
 #JACAMO
 export JACAMO_HOME=/Users/jgrey/github/otherLibs/jacamo/build
-export PATH=$JACAMO_HOME/scripts:$PATH
 export JDK_HOME="$(/usr/libexec/java_home)"
 export JAVA_HOME="$(/usr/libexec/java_home)"
 

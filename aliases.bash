@@ -78,6 +78,7 @@ alias temacs="emacs ~/github/writing/TODO.org"
 alias wemacs="emacs ~/github/writing/main.org"
 
 #haskell:
+#don't forget to update emacs haskell program name variable when modifying this
 alias whaskell="ghci -XFlexibleContexts -Wall -fwarn-name-shadowing "
-alias haskell="ghci -XFlexibleContexts -XGeneralizedNewtypeDeriving -XScopedTypeVariables"
-
+alias haskell="ghci -XFlexibleContexts -XGeneralizedNewtypeDeriving -XScopedTypeVariables -ghci-script ~/.shell_files/.ghci_alt"
+alias hs="haskell"

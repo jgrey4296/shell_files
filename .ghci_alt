@@ -3,7 +3,8 @@
 :set -XFlexibleContexts
 :set -XGeneralizedNewtypeDeriving
 :set -XScopedTypeVariables
-:set -XOverloadedStrings
+-- :set -XOverloadedStrings
+-- :set -XOverloadedLists
 :set -XFlexibleInstances
 -- :set -XMultiParamTypeClasses
 -- :set -FunctionalDependencies

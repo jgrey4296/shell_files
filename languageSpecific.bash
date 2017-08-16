@@ -35,7 +35,7 @@ function resetPy3(){
     }
 
 function setPy2_path(){
-    export PYTHONPATH=/usr/local/lib/python2.7/site/packages
+    export PYTHONPATH=/usr/local/lib/python2.7/site-packages
     export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
     export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
     export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH

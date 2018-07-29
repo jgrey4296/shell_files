@@ -18,7 +18,7 @@ function setupPath_minus_anaconda(){
     export PATH=/Applications/Racket/bin:$PATH
 
     #for latex (mactex, when installed):
-    export PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
+    export PATH=/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
 
     #for blender:
     export PATH=/Applications/blender/blender.app/Contents/MacOS:$PATH

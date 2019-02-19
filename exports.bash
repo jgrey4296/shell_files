@@ -31,6 +31,10 @@ function setupPath_minus_anaconda(){
 
     #for jacamo (see lang specific)
     export PATH=$JACAMO_HOME/scripts:$PATH
+
+    #for ruby / gems:
+    export PATH=/usr/local/lib/rub/gems/2.6.0/bin:$PATH
+    export PATH=/usr/local/opt/ruby/bin:$PATH
 }
 
 function setupPath_plus_anaconda(){
@@ -61,3 +65,6 @@ export TIDAL_TEMPO_PORT=57120
 
 #setting up the prompt:
 export PS1='(\j): \D{%D} \A \u:  '
+
+#Setting the location for spacemacs:
+# export SPACEMACSDIR=~/.spacemacs.d/

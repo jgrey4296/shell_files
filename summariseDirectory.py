@@ -1,27 +1,29 @@
-""" 
-Script to do a breath first search of a directory,
+"""
+Script to do a breadth first search of a directory,
     get all pdf files in the tree,
     and output them as an org file tree of links
 """
-from os import listdir
+from os import listdir, getcwd
 from os.path import abspath, join, isfile, isdir
-from hashlib import md5 
-from collections import namedtuple 
+from hashlib import md5
+from collections import namedtuple
 import IPython
+
 NodeLoc = namedtuple('Nodeloc', 'depth name dict')
 Entry = namedtuple('Entry', 'pathlist name')
 
 orgHeading = lambda x: "{} DIR: {}".format(x.depth * '*',x.name)
 orgLinkHeading = lambda d,p,t: "{} TODO [[file://{}][{}]]".format((d+1) * '*',p,t)
 
-startDir = '/Users/jgrey/Desktop/IPAD_MAIN'
+# startDir = '/Users/jgrey/Desktop/IPAD_MAIN'
+startDir = getcwd() 
 outputFile = 'summary.org'
 hashset = set()
 root_node = {}
 #A list of lists to be os.path.join'd
 stack = []
 #populate the stack:
-for loc in listdir(startDir):
+for loc in [x for x in listdir(startDir) if x != '.git']:
     stack.append(Entry([startDir],loc))
 
 #go down the tree
@@ -33,18 +35,22 @@ while len(stack) > 0:
 
     if pathIsADir:
         #directories get all subdirs
-        filteredDir = [x for x in listdir(fullpath) if x != '.DS_Store']
+        filteredDir = [x for x in listdir(fullpath) if x != '.DS_Store' and x != '.git']
         for newloc in filteredDir:
             stack.append(Entry([*current.pathlist,current.name],newloc))
     elif pathIsAFile:
         #files store themselves in the tree
-        root = root_node
+        tree_position = root_node
         for loc in current.pathlist[1:]:
-            if loc not in root:
-                root[loc] = {}
-            root = root[loc]
+            if loc not in tree_position:
+                tree_position[loc] = {}
+            tree_position = tree_position[loc]
         #at the end of the tree is the file itself
-        root[current.name] = current
+        #this should be unique
+        assert(current.name not in tree_position)
+        tree_position[current.name] = current
+
+
 
 #convert to sequence of headings and links to print
 sequence = []
@@ -59,7 +65,7 @@ while len(depthStack) > 0:
 
     depthStack.extend(dirs)
 
-    
+
 #then output to an org file:
 with open(join(startDir,outputFile),'w') as f:
     singleText = "\n".join(sequence)

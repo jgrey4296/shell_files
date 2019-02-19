@@ -33,7 +33,7 @@ function setupPath_minus_anaconda(){
     export PATH=$JACAMO_HOME/scripts:$PATH
 
     #for ruby / gems:
-    export PATH=/usr/local/lib/rub/gems/2.6.0/bin:$PATH
+    export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
     export PATH=/usr/local/opt/ruby/bin:$PATH
 }
 

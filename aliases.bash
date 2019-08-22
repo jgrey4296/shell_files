@@ -7,6 +7,8 @@ alias whereis="which"
 alias mini="ssh jg@192.168.1.5"
 alias ubun="ssh john@192.168.1.11"
 alias wind="ssh john@192.168.1.2"
+alias wakemini="wakeonlan A8:8E:24:A3:1A:43"
+
 
 alias master="emacs ~/github/writing/master.org"
 

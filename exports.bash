@@ -67,3 +67,7 @@ export PS1='(\j): \D{%D} \A \u:  '
 
 #Setting the location for spacemacs:
 # export SPACEMACSDIR=~/.spacemacs.d/
+
+#for gtags:
+export GTAGSCONF=~/.shell_files/gtags.conf
+export GTAGSLABEL=pygments

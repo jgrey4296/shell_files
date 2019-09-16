@@ -12,7 +12,8 @@ alias antjs='antlr4 -Dlanguage=JavaScript'
 export JG_PYLIBS=~/github/.installed_pylibs
 
 function setPy36(){
-    export PYTHONPATH=/usr/local/lib/python3.6/site-packages #main site packages location
+    export PYTHONPATH=/usr/local/lib/python3.4/site-packages #main site packages location
+    export PYTHONPATH=/usr/local/lib/python3.6/site-packages:$PYTHONPATH #main site packages location
     export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
     export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
     export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH
@@ -21,7 +22,10 @@ function setPy36(){
 }
 
 function setPy3(){
-    export PYTHONPATH=/usr/local/lib/python3.5/site-packages #main site packages location
+    export PYTHONPATH=/usr/local/lib/python3.4/site-packages #main site packages location
+    export PYTHONPATH=/usr/local/lib/python3.5/site-packages:$PYTHONPATH #main site packages location
+    export PYTHONPATH=/usr/local/lib/python3.6/site-packages:$PYTHONPATH #main site packages location
+    export PYTHONPATH=/usr/local/lib/python3.7/site-packages:$PYTHONPATH #main site packages location
     export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
     export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
     export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH
@@ -58,6 +62,9 @@ setPy3
 #removed --harmony_destructuring
 #alias test="node --harmony /usr/local/bin/nodeunit"
 alias jsrepl="env NODE_NO_READLINE=1 node"
+export PATH=~/.npm-global/bin:$PATH
+export PATH="./node_modules/.bin:$PATH"
+npm set prefix ~/.npm-global
 
 #TEX:
 export TEXINPUTS=/Volumes/DOCUMENTS/Dropbox/Scripts/tex/:$TEXINPUTS

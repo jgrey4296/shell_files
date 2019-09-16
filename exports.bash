@@ -1,14 +1,13 @@
 function setupPath_minus_anaconda(){
     #PATHS:
     export PATH=/sbin:/usr/sbin:/bin:/usr/bin
-    export PATH=/Users/jgrey/node_modules:$PATH
     export PATH=/usr/local/bin:$PATH
     export PATH=/Applications/SuperCollider:$PATH
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
     export PATH=/Volumes/Documents/Dropbox/Programming/Perl:$PATH
     export PATH=/Volumes/Documents/github/jg_shell_files:$PATH
     export PATH=/Applications/Racket\ v6.1.1/bin:$PATH
     export PATH=/usr/local/go/bin:$PATH
-    export PATH=/Users/jgrey/github/otherLibs/cppcheck:$PATH
 
     #For supercollider:
     export PATH=/Applications/SuperCollider/SuperCollider.app/Contents/Resources:$PATH
@@ -40,7 +39,7 @@ function setupPath_minus_anaconda(){
 function setupPath_plus_anaconda(){
     setupPath_minus_anaconda
     #for anaconda:
-    export PATH=~/anaconda/bin:$PATH
+    export PATH=~/anaconda3/bin:$PATH
 }
 #initial setup:
 setupPath_plus_anaconda

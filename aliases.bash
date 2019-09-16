@@ -85,3 +85,6 @@ alias wemacs="emacs ~/github/writing/main.org"
 alias whaskell="ghci -Wall -fwarn-name-shadowing -ghci-script ~/.shell_files/.ghci_alt"
 alias haskell="ghci -ghci-script ~/.shell_files/.ghci_alt"
 alias hs="haskell"
+
+#Disable osx gatekeeper: (needs sudo)
+alias gatekeeper="spctl --master-disable"

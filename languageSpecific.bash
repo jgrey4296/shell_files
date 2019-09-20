@@ -11,21 +11,10 @@ alias antjs='antlr4 -Dlanguage=JavaScript'
 #Python:
 export JG_PYLIBS=~/github/.installed_pylibs
 
-function setPy36(){
-    export PYTHONPATH=/usr/local/lib/python3.4/site-packages #main site packages location
-    export PYTHONPATH=/usr/local/lib/python3.6/site-packages:$PYTHONPATH #main site packages location
-    export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
-    export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
-    export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH
-    export PYTHONPATH=./:$PYTHONPATH
-    source activate py36
-}
-
-function setPy3(){
-    export PYTHONPATH=/usr/local/lib/python3.4/site-packages #main site packages location
-    export PYTHONPATH=/usr/local/lib/python3.5/site-packages:$PYTHONPATH #main site packages location
-    export PYTHONPATH=/usr/local/lib/python3.6/site-packages:$PYTHONPATH #main site packages location
-    export PYTHONPATH=/usr/local/lib/python3.7/site-packages:$PYTHONPATH #main site packages location
+function set_non_standard_python_paths(){
+    echo "Setting Non-Standard Python Paths"
+    #Useful for GI/PYGObject/GTK+3
+    export PYTHONPATH=/usr/local/lib/python3.7/site-packages:$PYTHONPATH
     export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
     export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
     export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH
@@ -33,37 +22,17 @@ function setPy3(){
     #source activate root --not used because it slows default startup
 }
 
-function resetPy3(){
-    setPy3
-    source activate root
-    }
-
-function setPy2_path(){
-    export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-    export PYTHONPATH=~/github/otherLibs:$PYTHONPATH #personally installed libs
-    export PYTHONPATH=~/github/:$PYTHONPATH #personally written libs
-    export PYTHONPATH=$JG_PYLIBS:$PYTHONPATH
-    export PYTHONPATH=./:$PYTHONPATH
-}
-
-function setPy2(){
-    setPy2_path
-    source activate py2
-}
-
-setPy3
-
 
 #Caffe Stuff:
 #export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/cuda/lib:$HOME/.pyenv/versions/anaconda-2.2.0/lib:/usr/local/lib/:/usr/lib
 
+#For Tidal:
+export TIDAL_TEMPO_PORT=57120
 
 #JavaScript:
 #removed --harmony_destructuring
 #alias test="node --harmony /usr/local/bin/nodeunit"
 alias jsrepl="env NODE_NO_READLINE=1 node"
-export PATH=~/.npm-global/bin:$PATH
-export PATH="./node_modules/.bin:$PATH"
 npm set prefix ~/.npm-global
 
 #TEX:
@@ -86,7 +55,6 @@ export NLTK_DATA=~/assets/nlg/nltk
 
 #Default editor:
 export EDITOR=emacs
-
 
 #TWINE:
 alias twine="open ~/dropbox/Programs/Twine\ 2.0/index.html"
